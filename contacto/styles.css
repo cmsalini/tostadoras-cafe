@@ -1,0 +1,46 @@
+h2 {
+    text-align: center;
+}
+
+form {
+    width: 80%;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+form label {
+    width: 100%;
+    display: block;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+form input, form textarea, form button, form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    color: #fff;
+    background-color: #32594a;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+form button:hover {
+    background-color: #325933;
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-left: 2px;
+}

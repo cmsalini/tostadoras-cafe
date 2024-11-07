@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -12,32 +11,22 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fdf5e7;
-    height: 100vh;
-    width: 100vw;
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     padding: 1rem;
 }
 
 /* Header */
-header {
+.header {
     background-color: #32594a;
     color: #fff;
-    padding: 1rem 0;
-    display: flex;
-    height: 15vh;
-}
-
-.header {
-    display: flex;
-    height: 15vh;
     padding: 1rem;
-    background-color: #32594a;
+    display: flex;
+    height: 12vh;
     align-items: center;
 }
 
@@ -57,6 +46,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 1.5rem;
+}
+
 h1, h2, p {
     color: #333;
     margin: 1rem 0.1rem;
@@ -66,17 +59,18 @@ h1, h2, p {
     display: flex;
     flex-direction: column;
     background-color: #bccabc;
-    padding: 1%;
-    height: 8vh;
+    justify-content: center;
+    padding: 1rem;
+    height: 100%;
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     vertical-align: middle;
+    justify-content: space-around;
 }
 
 .navbar ul li a {
@@ -94,8 +88,6 @@ h1, h2, p {
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
-    /*margin-bottom: 5rem;*/
-    /*gap: 5px;*/
 }
 
 .item {
@@ -106,7 +98,6 @@ h1, h2, p {
     height: 12rem;
     margin-inside: 2rem;
     margin-bottom: 3rem;
-
 }
 
 .img-producto {
@@ -116,8 +107,6 @@ h1, h2, p {
 .descripcion-producto {
     text-align: center;
     font-weight: bold;
-    /*margin: 1rem 0.1rem;*/
-
 }
 
 /* Reseñas */
@@ -126,7 +115,7 @@ h1, h2, p {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
     justify-items: center;
     justify-content: center;
     align-items: center;
@@ -164,7 +153,7 @@ h1, h2, p {
     flex-direction: column;
 }
 
-.contacto-footer a, .contacto-footer i{
+.contacto-footer a, .contacto-footer i {
     color: #fdf5e7;
     cursor: pointer;
 }
@@ -175,9 +164,33 @@ i {
 }
 
 .img-footer {
-    padding-right: 2rem;
     height: auto;
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
+}
+
+/* Media queries */
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .navbar {
+        display: block;
+        justify-content: normal;
+        padding: 0;
+        background: rgb(188, 202, 176);
+        background: linear-gradient(90deg, rgba(188, 202, 176, 1) 35%, rgba(253, 245, 231, 1) 100%);
+    }
+
+    .navbar ul {
+        display: block;
+        margin-left: 1rem;
+        align-content: center;
+    }
 }

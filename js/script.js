@@ -7,7 +7,7 @@ const productos = [
             "Proveniente de la región de Minas Gerais, conocida por su clima cálido y suelos ricos, perfectos para el cultivo de granos de alta calidad. Los caficultores trabajan a altitudes de alrededor de 1200 metros, asegurando un proceso cuidadoso y artesanal.\n" +
             "\n" +
             "Su perfil aromático, con un toque de dulzura natural, lo convierte en una excelente opción para preparaciones en espresso o métodos de filtro.",
-        image: "../assets/img/brasil.png",
+        image: "assets/img/brasil.png",
         amount: 25
     },
     {
@@ -18,7 +18,7 @@ const productos = [
             "Se cultiva en el Eje Cafetero, entre 1500 y 2000 metros sobre el nivel del mar. Estas condiciones ideales permiten obtener granos con un perfil complejo y refinado.\n" +
             "\n" +
             "Es perfecto para disfrutarlo solo, destacando su sabor único y su cuerpo redondo.",
-        image: "../assets/img/colombia.png",
+        image: "assets/img/colombia.png",
         amount: 30
     },
     {
@@ -29,7 +29,7 @@ const productos = [
             "Proveniente de las alturas de Cajamarca, a más de 1800 metros, este café es cultivado por cooperativas familiares comprometidas con prácticas orgánicas. Su origen asegura un producto respetuoso con el medio ambiente y de excelente calidad.\n" +
             "\n" +
             "Es ideal para métodos de preparación como la prensa francesa o el chemex, que resaltan su complejidad.",
-        image: "../assets/img/peru.png",
+        image: "assets/img/peru.png",
         amount: 28
     },
     {
@@ -40,7 +40,7 @@ const productos = [
             "Se cultiva en la región de Yungas una zona reconocida por su biodiversidad y paisajes únicos. Las fincas familiares trabajan a altitudes superiores a los 1600 metros y emplean un proceso de secado al sol que potencia sus características dulces y suaves.\n" +
             "\n" +
             "Disfrutalo en preparaciones tanto tradicionales como modernas.",
-        image: "../assets/img/bolivia.png",
+        image: "assets/img/bolivia.png",
         amount: 26
     },
     {
@@ -49,7 +49,7 @@ const productos = [
         description: "Una mezcla especial que combina lo mejor de los grandes orígenes cafetaleros: la suavidad de Brasil, la acidez brillante de Colombia y la intensidad frutal de Perú. Cada taza ofrece un balance perfecto entre dulzura, acidez y cuerpo.\n" +
             "\n" +
             "Ideal para cappuccinos, lattes o para disfrutar como café negro en una mañana productiva.",
-        image: "../assets/img/blend.png",
+        image: "assets/img/blend.png",
         amount: 35
     }
 ]

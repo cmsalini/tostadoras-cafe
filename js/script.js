@@ -8,7 +8,8 @@ const productos = [
             "\n" +
             "Su perfil aromático, con un toque de dulzura natural, lo convierte en una excelente opción para preparaciones en espresso o métodos de filtro.",
         image: "assets/img/brasil.png",
-        amount: 25
+        amount: 25,
+        price: 4500
     },
     {
         id: 2,
@@ -19,7 +20,8 @@ const productos = [
             "\n" +
             "Es perfecto para disfrutarlo solo, destacando su sabor único y su cuerpo redondo.",
         image: "assets/img/colombia.png",
-        amount: 30
+        amount: 30,
+        price: 5200
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ const productos = [
             "\n" +
             "Es ideal para métodos de preparación como la prensa francesa o el chemex, que resaltan su complejidad.",
         image: "assets/img/peru.png",
-        amount: 28
+        amount: 28,
+        price: 4800
     },
     {
         id: 4,
@@ -41,7 +44,8 @@ const productos = [
             "\n" +
             "Disfrutalo en preparaciones tanto tradicionales como modernas.",
         image: "assets/img/bolivia.png",
-        amount: 26
+        amount: 26,
+        price: 4700
     },
     {
         id: 5,
@@ -50,7 +54,8 @@ const productos = [
             "\n" +
             "Ideal para cappuccinos, lattes o para disfrutar como café negro en una mañana productiva.",
         image: "assets/img/blend.png",
-        amount: 35
+        amount: 35,
+        price: 5500
     }
 ]
 
@@ -75,9 +80,19 @@ function renderProductos() {
         const title = document.createElement('h3');
         title.classList.add('nombre-producto');
 
+        const buttonContenedor = document.createElement("div");
+        buttonContenedor.className = "button-container";
+
         const button = document.createElement('button');
         button.classList.add('button');
         button.textContent = "Más información";
+
+        const buttonCarrito = document.createElement('button');
+        buttonCarrito.classList.add('buttonCarrito');
+        buttonCarrito.textContent = "Agregar al carrito";
+        buttonCarrito.addEventListener('click', () => {
+            agregarProducto(producto);
+        });
 
         const modal = document.createElement('div');
         modal.classList.add('modal');
@@ -114,10 +129,89 @@ function renderProductos() {
 
         div.appendChild(image);
         div.appendChild(title);
-        div.appendChild(button);
+        buttonContenedor.appendChild(button);
+        buttonContenedor.appendChild(buttonCarrito);
+        div.appendChild(buttonContenedor);
 
         productosSection.appendChild(div);
     });
 }
 
 renderProductos();
+
+// Actualizar carrito
+function actualizarCarrito() {
+    var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    var listaCarrito = document.getElementById("lista-carrito");
+    listaCarrito.innerHTML = "";
+    for (var i = 0; i < carrito.length; i++) {
+        var producto = carrito[i];
+        var li = document.createElement("li");
+        li.textContent = producto.nombre + " - $" + producto.precio;
+        listaCarrito.appendChild(li);
+    }
+}
+
+// Obtener carrito de LocalStorage
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+
+// Agregar producto al carrito
+function agregarProducto(producto) {
+    var producto = {
+        id: producto.id,
+        nombre: producto.name,
+        precio: producto.price
+    };
+
+    var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push(producto);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();
+}
+
+// Guardar carrito en LocalStorage
+localStorage.setItem('carrito', JSON.stringify(carrito));
+
+
+// Eliminar producto
+function eliminarProducto(idProducto) {
+    var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    carrito = carrito.filter(function (producto) {
+        return producto.id !== idProducto;
+    });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarCarrito();
+}
+
+// Vaciar carrito
+document
+    .getElementById("vaciar-carrito")
+    .addEventListener("click", function () {
+        localStorage.removeItem("carrito");
+        actualizarCarrito();
+    });
+
+
+// Obtener elementos
+const cartButton = document.getElementById("cart-button");
+const cart = document.getElementById("carrito");
+const closeCartButton = document.getElementById("close-cart");
+
+// Mostrar el carrito
+cartButton.addEventListener("click", () => {
+    cart.classList.toggle("visible");
+    // Ocultar o mostrar el botón del carrito dependiendo de la visibilidad
+    if (cart.classList.contains("visible")) {
+        cartButton.style.display = "none"; // Ocultar el botón
+    } else {
+        cartButton.style.display = "block"; // Mostrar el botón
+    }
+});
+
+// Cerrar el carrito
+closeCartButton.addEventListener("click", () => {
+    cart.classList.remove("visible");
+    cartButton.style.display = "block"; // Mostrar el botón cuando el carrito se cierra
+
+});

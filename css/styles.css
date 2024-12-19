@@ -137,7 +137,6 @@ h3 {
     padding: 1rem;
     border-radius: 0.5rem;
     width: 50%;
-    /*max-width: 30%;*/
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     align-content: center;
@@ -225,7 +224,7 @@ button:hover {
     cursor: pointer;
 }
 
-i {
+#i-envelope, #i-location {
     margin-right: 0.5rem;
     text-decoration-line: none;
 }
@@ -271,14 +270,14 @@ i {
     position: fixed;
     top: 0;
     right: 0;
-    width: 300px;
+    width: auto;
     height: 100%;
     background-color: #fdf5e7;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
-    padding: 20px;
+    padding: 1rem;
     z-index: 1000;
 }
 
@@ -307,6 +306,21 @@ i {
 
 .carrito.visible {
     opacity: 1;
-    visibility: visible; /* Hace visible el carrito */
-    transition: opacity 0.3s ease, visibility 0s; /* Vuelve a la visibilidad instantáneamente */
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s;
+}
+
+#tabla-carrito {
+    width: 100%;
+    text-align: left;
+}
+
+#tabla-carrito td {
+    padding: 0.5rem;
+}
+
+#tabla-carrito td button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

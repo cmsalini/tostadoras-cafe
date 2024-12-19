@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
           rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
         <a href="index.html">
             <img src="assets/img/img-header.png" alt="Tostadoras" class="img-footer"></a></div>
 
-    <button id="cart-button">Ver Carrito</button>
+    <button id="cart-button"><i class="fas fa-shopping-cart"></i></button>
 
 </header>
 
@@ -40,9 +41,9 @@
 
     <div id="carrito" class="carrito">
         <h2>Carrito de Compras</h2>
-        <ul id="lista-carrito"></ul>
-        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <ul id="tabla-carrito"></ul>
         <button id="close-cart">Ver más productos</button>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
     </div>
 
     <section id="inicio">
@@ -97,10 +98,10 @@
 <footer class="footer">
     <div class="contacto-footer">
         <div>
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-envelope" id="i-envelope"></i>
             <a href="mailto:info@mail.com.ar">info@tostadorascafe.com.ar</a></div>
         <div>
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" id="i-location"></i>
             <a href="https://maps.app.goo.gl/ihLb2zXUXYtiPJARA" target="_blank">Ubicación</a></div>
     </div>
     <img src="assets/img/cafe-footer.png" alt="Cafe" class="img-footer">

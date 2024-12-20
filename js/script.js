@@ -71,6 +71,9 @@ function renderProductos() {
         buttonCarrito.addEventListener('click', () => {
             agregarProducto(producto);
         });
+        buttonCarrito.addEventListener("click", function() {
+            mostrarModal(); // Llamamos a la función para mostrar el modal
+        });
 
         const modal = document.createElement('div');
         modal.classList.add('modal');
@@ -114,6 +117,7 @@ function renderProductos() {
         productosSection.appendChild(div);
     });
 }
+
 
 function actualizarCarrito() {
     var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -248,6 +252,25 @@ closeCartButton.addEventListener("click", () => {
 
 });
 
+// Función para mostrar el modal de agregado al carrito
+function mostrarModal() {
+    const modalAgregadoCarrito = document.getElementById("modalAgregadoCarrito");
+    modalAgregadoCarrito.style.display = "block";
+}
+
+// Cerrar el modal cuando se hace clic en el botón de cerrar o fuera del modal
+document.getElementById("closeAgregadoCarrito").addEventListener("click", function() {
+    const modalAgregadoCarrito = document.getElementById("modalAgregadoCarrito");
+    modalAgregadoCarrito.style.display = "none";
+});
+
+window.addEventListener("click", function(event) {
+    const modalAgregadoCarrito = document.getElementById("modalAgregadoCarrito");
+    if (event.target === modalAgregadoCarrito) {
+        modalAgregadoCarrito.style.display = "none";
+    }
+});
 
 generarProductosArray();
 renderProductos();
+
